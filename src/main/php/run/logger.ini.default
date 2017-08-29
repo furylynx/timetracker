@@ -1,0 +1,16 @@
+; Logger Configuration:
+;======================
+
+[log]
+
+; Path to the logfile. File extension should be .log. Logrotation uses .log.
+logPath = /tmp/log/timetracker.log
+
+; Max file size after which log rotation will be applied
+maxFileSizeInMB = 1
+
+; The log level
+level=INFO
+
+; Log to terminal (true), or to file (false)
+stdout=false

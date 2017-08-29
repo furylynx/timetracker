@@ -1,0 +1,17 @@
+; Database Configuration
+; ======================
+
+[database]
+
+; The address
+host = localhost
+
+; The port (default is 3306)
+port = 3306
+
+; The database's name
+database = thedatabase
+
+; The user credentials
+user = username
+password = thepassword
