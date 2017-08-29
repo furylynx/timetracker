@@ -54,9 +54,12 @@ if (! is_null ( $args ))
 
 		if (!is_null($userId) && $userId > 0)
 		{
+			//use accDao to fetch time
+			$targetTimePerDay = $accDao->getTargetTimePerDay($userId);
+
 			//initialize the time service
 			$timeService = new service\TimeService ($timesDao);
-			$list = $timeService->getMonthOverview($userId, $month, $scriptUtil->getLineBreakString(), 480, $ignoreToday);
+			$list = $timeService->getMonthOverview($userId, $month, $scriptUtil->getLineBreakString(), $targetTimePerDay, $ignoreToday);
 
 			$scriptUtil->println ( $list );
 

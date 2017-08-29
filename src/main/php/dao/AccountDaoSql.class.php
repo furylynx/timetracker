@@ -54,5 +54,28 @@ class AccountDaoSql implements IAccountDao {
 
 	}
 
+	public function getTargetTimePerDay($userId)
+	{
+		$sql = "SELECT target_time_per_day
+				FROM accounts
+				WHERE
+					id = ?
+				";
+
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute(array($userId));
+		$rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+		if (0 == count($rows))
+		{
+			return null;
+		}
+		else
+		{
+			return $rows[0]["target_time_per_day"];
+		}
+
+	}
+
 
 }
